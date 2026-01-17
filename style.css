@@ -16,11 +16,12 @@ body::before {
 }
 body {
   background: linear-gradient(#ffdde1, #ee9ca7);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow-x: hidden;
+  background-attachment: fixed;
 }
 
 /* ===== AMPL0P ===== */
@@ -179,8 +180,46 @@ section {
   50%  { transform: translateY(-18px); }
   100% { transform: translateY(0); }
 }
+/* ===== GALLERY SECTION ===== */
+.gallery-section {
+  padding: 80px 20px;
+}
 
+.gallery-title {
+  font-family: 'Valentine Bellia', sans-serif;
+  font-size: 2.4rem;
+  color: #43334C;
+  margin-bottom: 40px;
+}
+.gallery-text {
+  font-family: 'Belanosima', sans-serif;
+  font-size: 1.4rem;
+  color: #43334C;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+/* GRID GALERI */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
 
+.gallery-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 25px 45px rgba(255,105,180,0.5);
+}
 
 /* Fade out amplop */
 .wrapper.fade-out {
@@ -226,7 +265,13 @@ section {
   box-shadow: 0 0 25px rgba(255,182,193,0.6);
 }
 
-/* ===== TABLET ===== */
+.closing h2{
+  font-family: 'Rangile', sans-serif;
+  font-size: 3.5rem;
+  color: #F875AA;
+  margin-top: 40px;
+}
+/* Mobile Responsive */
 @media (max-width: 1024px) {
 
   .wrapper {
@@ -243,19 +288,24 @@ section {
     transform: scale(0.85);
   }
 }
-
+  .gallery-grid {
+    width: 70%;
+  }
   .hero h1 {
-    font-size: 4.1rem;
+    font-size: 5.5rem;
   }
   .hero p {
     font-size: 1.6rem;
   }
   .message {
     font-size: 1.3rem;
-    margin-left: 50px;
-    margin-top: 20px;
+    margin-left: 141px;
+    
   }
-
+  .gallery-grid img {
+    height: 200px;
+  }
+  
   .floating-photo {
     width: 150px;
     height: 200px;
