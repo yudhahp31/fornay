@@ -40,16 +40,3 @@ document.addEventListener("mousemove", (e) => {
     `;
   });
 });
-if (window.innerWidth > 1024) {
-  document.addEventListener("mousemove", (e) => {
-    const x = (window.innerWidth / 2 - e.clientX) / 60;
-    const y = (window.innerHeight / 2 - e.clientY) / 60;
-
-    floatingPhotos.forEach((photo, index) => {
-      const depth = (index + 1) * 0.6;
-      photo.style.transform = `
-        translate(${x * depth}px, ${y * depth}px)
-      `;
-    });
-  });
-}
